@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
 
 // ── Nav: hamburger toggle ──────────────
 const hamburger = document.getElementById('nav-hamburger');
-const navLinks  = document.getElementById('nav-links');
+const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
@@ -65,22 +65,22 @@ fadeTargets.forEach(el => observer.observe(el));
   for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
     const size = Math.random() * 2 + 1;
-    const x    = Math.random() * 100;
-    const y    = Math.random() * 100;
-    const dur  = Math.random() * 12 + 8;
-    const del  = Math.random() * 6;
-    const op   = Math.random() * 0.25 + 0.05;
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const dur = Math.random() * 12 + 8;
+    const del = Math.random() * 6;
+    const op = Math.random() * 0.25 + 0.05;
 
     Object.assign(p.style, {
-      position:        'absolute',
-      width:           `${size}px`,
-      height:          `${size}px`,
-      borderRadius:    '50%',
-      left:            `${x}%`,
-      top:             `${y}%`,
-      background:      `rgba(26,111,216,${op})`,
-      animation:       `float-particle ${dur}s ${del}s ease-in-out infinite alternate`,
-      pointerEvents:   'none',
+      position: 'absolute',
+      width: `${size}px`,
+      height: `${size}px`,
+      borderRadius: '50%',
+      left: `${x}%`,
+      top: `${y}%`,
+      background: `rgba(26,111,216,${op})`,
+      animation: `float-particle ${dur}s ${del}s ease-in-out infinite alternate`,
+      pointerEvents: 'none',
     });
     container.appendChild(p);
   }
@@ -90,7 +90,7 @@ fadeTargets.forEach(el => observer.observe(el));
   style.textContent = `
     @keyframes float-particle {
       0%   { transform: translate(0, 0); opacity: var(--op, .12); }
-      100% { transform: translate(${rand(-40,40)}px, ${rand(-40,40)}px); opacity: var(--op, .05); }
+      100% { transform: translate(${rand(-40, 40)}px, ${rand(-40, 40)}px); opacity: var(--op, .05); }
     }
     #hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
   `;
@@ -100,7 +100,7 @@ fadeTargets.forEach(el => observer.observe(el));
 })();
 
 // ── Form handling ─────────────────────
-const form    = document.getElementById('contact-form');
+const form = document.getElementById('contact-form');
 const success = document.getElementById('form-success');
 
 form.addEventListener('submit', (e) => {
