@@ -134,7 +134,7 @@ form.addEventListener('submit', (e) => {
 
   // Simulate submission (replace with real endpoint)
   const btn = form.querySelector('#form-submit');
-  btn.textContent = 'Sending…';
+  btn.textContent = 'A enviar…';
   btn.disabled = true;
 
   setTimeout(() => {
