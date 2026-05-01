@@ -940,72 +940,78 @@ button {
   margin-top: -32px;
 }
 
-.vision__diagram {
+.team-layout {
   display: flex;
   flex-direction: column;
+  gap: 16px;
   align-items: center;
-  gap: 0;
 }
 
-.vision-node {
-  display: flex;
-  align-items: center;
-  gap: 18px;
+.team-card {
   width: 100%;
-  padding: 20px 22px;
+  padding: 32px 24px;
   background: var(--clr-white);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
-  opacity: .55;
-  transition: opacity var(--transition), box-shadow var(--transition);
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-.vision-node--active {
-  opacity: 1;
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px rgba(4, 82, 167, .1);
 }
 
-.vision-node__circle {
-  width: 48px;
-  height: 48px;
+.team-card--tech:hover {
+  border-color: #27C93F;
+}
+
+.team-card__icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(4, 82, 167, 0.08);
   border-radius: 50%;
-  background: var(--clr-light-2);
   display: grid;
   place-items: center;
-  flex-shrink: 0;
-  color: var(--clr-muted);
-}
-
-.vision-node--active .vision-node__circle {
-  background: var(--clr-primary);
-  color: var(--clr-white);
-}
-
-.vision-node__label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--clr-text);
-  line-height: 1.4;
-}
-
-.vision-node__label small {
-  display: block;
-  font-size: 11.5px;
-  font-weight: 400;
-  color: var(--clr-text-light);
-  margin-top: 2px;
-}
-
-.vision-node--active .vision-node__label {
+  margin: 0 auto 16px;
   color: var(--clr-primary);
+  transition: transform 0.3s ease;
 }
 
-.vision-line {
-  width: 2px;
-  height: 24px;
-  background: var(--clr-border);
-  margin: 0 auto;
+.team-card:hover .team-card__icon {
+  transform: scale(1.1);
+}
+
+.team-card--tech .team-card__icon {
+  color: #27C93F;
+  background: rgba(39, 201, 63, 0.08);
+}
+
+.team-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 8px;
+}
+
+.team-card__desc {
+  font-size: 14px;
+  color: var(--clr-text-light);
+  line-height: 1.5;
+}
+
+.team-connector {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  display: grid;
+  place-items: center;
+  color: var(--clr-primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  z-index: 2;
 }
 
 /* ═══════════════════════════════════════════════════
