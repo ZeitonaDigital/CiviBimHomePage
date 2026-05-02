@@ -1238,7 +1238,7 @@ button {
 }
 
 .footer__livro img {
-  height: 36px;
+  height: 22px;
   width: auto;
   opacity: 0.85;
   transition: opacity var(--transition), transform var(--transition);
