@@ -1238,8 +1238,10 @@ button {
 }
 
 .footer__livro img {
-  height: 22px;
+  height: clamp(18px, 2.5vw, 24px);
   width: auto;
+  max-width: 100%;
+  object-fit: contain;
   opacity: 0.85;
   transition: opacity var(--transition), transform var(--transition);
   display: block;
