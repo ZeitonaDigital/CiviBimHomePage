@@ -132,16 +132,41 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
-  // Simulate submission (replace with real endpoint)
+  // Submit to FormSubmit
   const btn = form.querySelector('#form-submit');
+  const originalBtnText = btn.innerHTML;
   btn.textContent = 'A enviar…';
   btn.disabled = true;
 
-  setTimeout(() => {
+  fetch("https://formsubmit.co/ajax/contact@zeitona.pt", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      nome: form.querySelector('#field-name').value.trim(),
+      empresa: form.querySelector('#field-company').value.trim(),
+      email: form.querySelector('#field-email').value.trim(),
+      funcao: form.querySelector('#field-role').value || 'Não especificada',
+      mensagem: form.querySelector('#field-message').value.trim() || 'Sem mensagem adicional',
+      _subject: "Novo contacto (CiviBIM Homepage)"
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
     form.style.display = 'none';
     success.style.display = 'flex';
     success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 900);
+  })
+  .catch(error => {
+    console.error('Error submitting form:', error);
+    alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+  })
+  .finally(() => {
+    btn.innerHTML = originalBtnText;
+    btn.disabled = false;
+  });
 });
 
 // Remove error state on input
